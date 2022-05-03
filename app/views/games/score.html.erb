@@ -1,0 +1,15 @@
+<h1 class='p-5'>Result</h1>
+
+<div class= 'p-5'>
+  <% if @arrayincluded %>
+    <% if @english_word %>
+      <%= "Congratulations! #{@ask} is a valid English word" %>
+    <% else %>
+      <%= "Sorry but #{@ask} does not seem to be a valid English word.." %>
+    <% end %>
+  <% else %>
+    <%= "Sorry but #{@ask} can't be build out of #{@letters}" %>
+  <% end %>
+</div>
+
+<%= link_to "New Game", new_path, class:'p-5' %>

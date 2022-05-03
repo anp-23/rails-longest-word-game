@@ -1,0 +1,28 @@
+<h1 class='p-5'>********* Welcome to the longest word-game! *********</h1>
+
+<h2 class='p-5'>Here is your grid:</h2>
+
+<div class="container">
+  <ul class="list-group list-group-horizontal">
+    <% @letters.each do |letter| %>
+      <li class="list-group-item"><%= letter %></li>
+    <% end %>
+  </ul>
+</div>
+
+<form action="">
+
+</form>
+
+<h2 class='p-5'>What is your longest word?</h2>
+
+<div class="container">
+  <form action="/score" method='post'>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%= hidden_field_tag :letters, @letters %>
+    <div class="input-group mb-3">
+      <input class="form-control" type="text" name="ask" placeholder= "Largest word" aria-describedby="submit-addon2">
+      <input class="btn btn-primary" type="submit" value="Play" id="button-addon2">
+    </div>
+  </form>
+</div>
